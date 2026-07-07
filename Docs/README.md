@@ -16,6 +16,8 @@
 - [10-implementation-start.md](10-implementation-start.md) - первый setup разработки и аудит текущей машины.
 - [11-new-developer-onboarding.md](11-new-developer-onboarding.md) - подключение нового разработчика с пустой машины.
 - [12-git-sync-playbook.md](12-git-sync-playbook.md) - синхронизация проекта через Git и промпты для Codex.
+- [13-supabase-setup.md](13-supabase-setup.md) - создание Supabase-проекта и применение начальной схемы БД.
+- [14-fvm-version-lock.md](14-fvm-version-lock.md) - фиксация Flutter-версии через FVM для всей команды.
 
 ## Как поддерживать документы
 
