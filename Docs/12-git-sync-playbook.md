@@ -102,10 +102,13 @@ flutter analyze
 Если команда использует FVM:
 
 ```powershell
+fvm install
 cd apps/customer_app
 fvm flutter pub get
 fvm flutter analyze
 ```
+
+Для Supabase студент получает доступ к проекту `criminal-brushes-dev` и локально создает `.env.dev` по `.env.example`.
 
 ## 5. Ежедневный ручной сценарий работы
 
@@ -204,6 +207,7 @@ git commit
 - Большие временные файлы.
 - `build/`
 - `.dart_tool/`
+- `.fvm/`
 
 В репозитории должен быть только пример:
 
@@ -327,7 +331,7 @@ git diff --cached
 ### Первое подключение
 
 ```text
-Кодекс, помоги мне подключиться к проекту Criminal Brushes. Я уже получил доступ к репозиторию. Проверь, что установлены Git, Flutter, Dart, Android Studio, FVM, Node.js, Supabase CLI и Docker. Затем помоги клонировать репозиторий и запустить Flutter app.
+Кодекс, помоги мне подключиться к проекту Criminal Brushes. Я уже получил доступ к GitHub и Supabase cloud project. Проверь, что установлены Git, Flutter, Dart, Android Studio, FVM, Node.js и Supabase CLI. Docker не обязателен. Затем помоги клонировать репозиторий, выполнить fvm install и подготовить .env.dev по .env.example.
 ```
 
 ### Начать задачу

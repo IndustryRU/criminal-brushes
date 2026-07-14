@@ -8,7 +8,7 @@
 
 ```text
 Git: 2.51.0.windows.2
-Flutter: 3.35.6 stable
+Flutter: 3.44.4 stable через FVM
 Dart: 3.9.2
 Node.js: v22.20.0
 Supabase CLI: 2.67.1
@@ -102,11 +102,11 @@ fvm --version
 %LOCALAPPDATA%\Pub\Cache\bin
 ```
 
-После создания Flutter app:
+После клонирования проекта:
 
 ```bash
-fvm install 3.35.6
-fvm use 3.35.6
+fvm install
+fvm flutter --version
 fvm flutter doctor
 ```
 
@@ -201,20 +201,22 @@ flutter pub add --dev json_serializable
 flutter pub add --dev flutter_lints
 ```
 
-### Шаг 4. Инициализировать Supabase
+### Шаг 4. Подключить Supabase cloud project
 
 В корне проекта:
-
-```bash
-supabase init
-```
-
-После создания Supabase cloud project:
 
 ```bash
 supabase login
 supabase link --project-ref <project-ref>
 ```
+
+Для применения миграций в облачную dev-базу:
+
+```bash
+supabase db push
+```
+
+Docker не обязателен: `supabase start` нужен только для локального Supabase stack.
 
 ### Шаг 5. Добавить `.env.example`
 
@@ -250,7 +252,7 @@ flutter build web
 5. Инициализировать Git.
 6. Создать структуру `apps/customer_app`.
 7. Подключить Flutter зависимости.
-8. Инициализировать Supabase.
+8. Подключить Supabase cloud project.
 9. Создать первый CI workflow.
 10. Сделать первый коммит.
 

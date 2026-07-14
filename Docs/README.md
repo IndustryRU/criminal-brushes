@@ -18,6 +18,7 @@
 - [12-git-sync-playbook.md](12-git-sync-playbook.md) - синхронизация проекта через Git и промпты для Codex.
 - [13-supabase-setup.md](13-supabase-setup.md) - создание Supabase-проекта и применение начальной схемы БД.
 - [14-fvm-version-lock.md](14-fvm-version-lock.md) - фиксация Flutter-версии через FVM для всей команды.
+- [15-cloud-supabase-workflow.md](15-cloud-supabase-workflow.md) - работа с облачным Supabase без Docker через API.
 
 ## Как поддерживать документы
 

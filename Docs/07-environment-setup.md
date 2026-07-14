@@ -13,6 +13,7 @@
 - VS Code или Cursor.
 - Supabase CLI.
 - Node.js LTS.
+- Docker Desktop опционально, только для локального Supabase stack.
 - Xcode для iOS-разработки на macOS.
 
 ## Проверка Flutter
@@ -22,15 +23,15 @@ flutter doctor
 flutter --version
 ```
 
-Рекомендуется закрепить версию Flutter через FVM:
+Версия Flutter закреплена через FVM в `.fvmrc`. После клонирования проекта:
 
 ```bash
-fvm install stable
-fvm use stable
+fvm install
+fvm flutter --version
 fvm flutter doctor
 ```
 
-После выбора конкретной версии команда фиксирует ее в репозитории.
+Обычные Flutter-команды в проекте лучше запускать через `fvm flutter`.
 
 ## Supabase CLI
 
@@ -40,12 +41,15 @@ fvm flutter doctor
 supabase --version
 ```
 
-Локальный старт после появления конфигурации:
+Текущий процесс проекта: cloud-first без Docker. Supabase CLI используем для привязки к облачному проекту и применения миграций:
 
 ```bash
-supabase start
-supabase status
+supabase login
+supabase link --project-ref <project-ref>
+supabase db push
 ```
+
+`supabase start` не обязателен, потому что требует Docker и запускает локальный Supabase stack.
 
 ## Переменные окружения
 
@@ -163,6 +167,6 @@ flutter build ipa --release
 5. Добавить базовый CI.
 6. Создать Supabase project `dev`.
 7. Добавить первую миграцию.
-8. Подключить Supabase client в Flutter.
+8. Подключить Supabase client в Flutter через `SUPABASE_URL` и `SUPABASE_ANON_KEY`.
 9. Сделать первый экран home с моковыми данными.
 10. Настроить PR flow.

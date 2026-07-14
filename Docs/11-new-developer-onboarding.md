@@ -16,7 +16,7 @@
 - FVM.
 - Node.js LTS.
 - Supabase CLI.
-- Docker Desktop.
+- Docker Desktop опционально, если команда позже включит локальный Supabase stack.
 
 Для iOS-разработки дополнительно:
 
@@ -169,12 +169,7 @@ fvm install
 fvm flutter doctor
 ```
 
-Если в проекте еще не зафиксирована версия Flutter:
-
-```bash
-fvm install 3.35.6
-fvm use 3.35.6
-```
+В проекте версия Flutter фиксируется через `.fvmrc`. Ожидаемую версию смотри в `Docs/14-fvm-version-lock.md`.
 
 ## 8. Node.js LTS
 
@@ -219,7 +214,15 @@ supabase link --project-ref <project-ref>
 
 ## 10. Docker Desktop
 
-Установить Docker Desktop:
+Для текущего проекта Docker не обязателен. Мы работаем с облачным Supabase напрямую через API.
+
+Docker понадобится позже, если команда решит запускать локальный Supabase:
+
+- `supabase start`;
+- локальный `supabase db reset`;
+- локальное тестирование Edge Functions.
+
+Если Docker доступен, можно установить Docker Desktop:
 
 https://www.docker.com/products/docker-desktop/
 
@@ -230,20 +233,20 @@ docker --version
 docker compose version
 ```
 
-Docker нужен для локального Supabase:
+Локальный Supabase запускается так:
 
 ```bash
 supabase start
 ```
 
-Если Docker не установлен, разработчик может работать с cloud Supabase, но локальная backend-разработка будет ограничена.
+Если Docker не установлен, разработчик работает с cloud Supabase. Для нашего текущего этапа это нормальный основной процесс.
 
 ## 11. Доступы
 
 Новый участник должен получить:
 
 - GitHub/GitLab repository access.
-- Supabase project access.
+- Supabase project access в `criminal-brushes-dev`.
 - Figma access.
 - Task tracker access.
 - Team chat access.
@@ -343,21 +346,24 @@ fvm flutter run -d <device-id>
 fvm flutter devices
 ```
 
-## 15. Локальный Supabase
+## 15. Supabase cloud workflow
 
-В корне репозитория:
+Текущий проект работает без локального Docker/Supabase stack. Flutter подключается к облачному Supabase через:
 
-```bash
-supabase start
+```text
+SUPABASE_URL
+SUPABASE_ANON_KEY
 ```
 
-Применить миграции:
+Если разработчик работает со схемой БД, он использует Supabase CLI:
 
 ```bash
-supabase db reset
+supabase login
+supabase link --project-ref <project-ref>
+supabase db push
 ```
 
-Если проект использует cloud Supabase для dev, этот шаг может быть необязательным. Решение фиксируется в `Docs/07-environment-setup.md`.
+Если CLI недоступен, SQL можно временно применить через `Supabase Dashboard -> SQL Editor`, но миграция должна остаться в Git.
 
 ## 16. Проверка готовности
 
@@ -370,8 +376,9 @@ fvm --version
 node --version
 npm --version
 supabase --version
-docker --version
 ```
+
+`docker --version` проверяем только если разработчик будет запускать локальный Supabase.
 
 В папке Flutter app:
 
@@ -421,7 +428,7 @@ flutter doctor --android-licenses
 
 ### `supabase start` не работает
 
-Проверить:
+Для текущего проекта это не блокер: мы работаем с cloud Supabase. Если все-таки нужен локальный stack, проверить:
 
 ```bash
 docker --version
