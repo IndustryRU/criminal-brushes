@@ -19,6 +19,7 @@
 - [13-supabase-setup.md](13-supabase-setup.md) - создание Supabase-проекта и применение начальной схемы БД.
 - [14-fvm-version-lock.md](14-fvm-version-lock.md) - фиксация Flutter-версии через FVM для всей команды.
 - [15-cloud-supabase-workflow.md](15-cloud-supabase-workflow.md) - работа с облачным Supabase без Docker через API.
+- [phases/](phases/README.md) - подробные технические задания и критерии приемки отдельных фаз.
 
 ## Как поддерживать документы
 

@@ -4,7 +4,7 @@
 
 Оценка: 3-5 дней.
 
-Статус на 2026-07-14: техническая часть завершена, внешний Figma/UI kit ожидает ссылку и подтверждение команды.
+Статус на 2026-07-16: завершена. В Phase 1 принят code-first UI kit без Figma.
 
 Цель: подготовить основу для командной разработки.
 
@@ -20,7 +20,7 @@
 - [x] Создать `.env.example`.
 - [x] Добавить CI.
 - [x] Зафиксировать Git flow.
-- [ ] Подготовить Figma/UI kit draft и добавить ссылку в `05-design-system.md`.
+- [x] Зафиксировать code-first UI kit workflow без зависимости от Figma.
 
 Результат:
 
@@ -41,25 +41,35 @@ fvm flutter build web --release
 
 ## Phase 1: Visual MVP
 
-Оценка: 1-2 недели.
+Оценка: 2-3 недели для одного разработчика или около 2 недель при аккуратном параллельном разделении задач.
 
-Цель: собрать первую версию пользовательского web/mobile интерфейса на моковых данных.
+Статус на 2026-07-16: ТЗ согласовано, реализация не начата.
+
+Цель: собрать интерактивный web/mobile интерфейс на моковых данных с полным демонстрационным guest flow.
 
 Задачи:
 
+- App shell и маршрутизация.
+- Code-first UI kit.
 - Home screen.
 - Catalog screen.
 - Product details.
-- Cart UI.
-- Checkout UI.
+- Локальная интерактивная корзина.
+- Checkout с клиентской валидацией.
+- Mock order confirmation.
 - Responsive layout.
-- Design tokens.
-- Базовые компоненты.
+- Design tokens и базовые компоненты.
+- Loading, empty, error, disabled и success states.
+- ImageGen asset pipeline.
+- Widget/unit/router tests.
 
 Результат:
 
-- Продукт можно показать команде/партнерам.
-- Видно, как бренд работает в приложении.
+- Пользователь проходит Home → Catalog → Product → Cart → Checkout → Confirmation без API.
+- Продукт можно показать команде и партнерам на mobile и desktop.
+- Архитектура готова к замене mock repositories на Supabase.
+
+Подробное ТЗ и критерии приемки: [Phase 1: Visual MVP](phases/01-visual-mvp-spec.md).
 
 ## Phase 2: Supabase Core
 

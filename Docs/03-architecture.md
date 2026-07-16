@@ -199,3 +199,16 @@ PAYMENT_PUBLIC_KEY
 ```
 
 Service role key хранится только в Supabase/CI secrets и не попадает в Flutter app.
+
+## Архитектура Phase 1
+
+В фазе 1 используется code-first Visual MVP внутри `apps/customer_app`:
+
+- UI получает данные через repository interfaces.
+- `MockProductRepository` и `MockDeliveryRepository` работают без сети.
+- Riverpod хранит состояние фильтров, выбранного варианта, корзины и checkout draft.
+- Supabase-реализации репозиториев подключаются в следующих фазах без изменения presentation API.
+- Корзина и mock-заказ живут только в памяти приложения.
+- Отдельные workspace packages пока не создаются; границы соблюдаются внутри `lib/features`.
+
+Подробная структура, модели и providers определены в [Phase 1 specification](phases/01-visual-mvp-spec.md).

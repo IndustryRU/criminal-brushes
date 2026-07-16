@@ -247,7 +247,7 @@ supabase start
 
 - GitHub/GitLab repository access.
 - Supabase project access в `criminal-brushes-dev`.
-- Figma access.
+- Доступ к code-first UI kit в приложении (`/ui-kit`); Figma для Phase 1 не требуется.
 - Task tracker access.
 - Team chat access.
 - Доступ к staging secrets через безопасный канал.

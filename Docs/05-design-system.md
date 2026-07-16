@@ -1,19 +1,16 @@
 # Design System
 
-## Figma
+## Code-first workflow
 
-Статус на 2026-07-14: ссылка на командный Figma-файл в репозитории не зафиксирована.
+На Phase 1 команда не использует Figma. Дизайн ведется непосредственно в Flutter:
 
-После создания или подтверждения UI kit добавить сюда:
+- этот документ определяет визуальные принципы;
+- `apps/customer_app/lib/core/theme/` является источником токенов;
+- маршрут `/ui-kit` показывает компоненты и состояния;
+- mobile/desktop screenshots прикладываются к UI pull requests;
+- `Docs/image/1.jpg` используется как визуальный reference, но не как готовый экран.
 
-```text
-Figma file: <url>
-Owner: <name>
-Status: draft | approved
-Last reviewed: YYYY-MM-DD
-```
-
-До появления ссылки источником базовых цветов и responsive breakpoints служит этот документ, а их кодовой реализацией — `apps/customer_app/lib/core/theme/`.
+Figma может быть подключена позднее, но не является зависимостью или критерием приемки Phase 1.
 
 ## Визуальная база
 
@@ -137,3 +134,5 @@ desktop: 1024+
 - Open Graph image для web.
 
 Для маркетплейсов заранее подготовить отдельные скриншоты без спорных формулировок и с понятной демонстрацией функций.
+
+В Phase 1 растровые product/lifestyle/hero assets создаются через ImageGen. Основной текст, цены, CTA и UI controls остаются Flutter-компонентами и не встраиваются в изображения. Полный asset plan и правила генерации находятся в [Phase 1 specification](phases/01-visual-mvp-spec.md).

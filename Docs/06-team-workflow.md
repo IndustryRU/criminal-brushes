@@ -36,7 +36,7 @@
 
 - GitHub или GitLab для кода.
 - GitHub Projects, Linear или YouTrack для задач.
-- Figma для дизайна.
+- Code-first Flutter UI kit и screenshots в PR для Phase 1; Figma может быть подключена позднее как опциональный инструмент.
 - Supabase Dashboard + Supabase CLI.
 - Telegram/Slack для коммуникации.
 - Notion можно использовать для бизнеса, но техническая документация остается в `Docs`.

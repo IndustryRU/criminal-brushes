@@ -28,7 +28,7 @@ local project -> commit -> push -> remote repository -> pull/clone by another de
 - Telegram zip-архивы.
 - Ручное копирование папок.
 
-Для кода используем GitHub/GitLab. Для дизайна - Figma. Для задач - GitHub Projects, YouTrack, Linear или Notion.
+Для кода используем GitHub/GitLab. В Phase 1 дизайн ведем code-first во Flutter, а screenshots прикладываем к PR; Figma не обязательна. Для задач используем GitHub Projects, YouTrack, Linear или Notion.
 
 ## 2. Рекомендуемая схема веток
 
