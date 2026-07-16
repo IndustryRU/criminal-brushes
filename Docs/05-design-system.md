@@ -1,5 +1,20 @@
 # Design System
 
+## Figma
+
+Статус на 2026-07-14: ссылка на командный Figma-файл в репозитории не зафиксирована.
+
+После создания или подтверждения UI kit добавить сюда:
+
+```text
+Figma file: <url>
+Owner: <name>
+Status: draft | approved
+Last reviewed: YYYY-MM-DD
+```
+
+До появления ссылки источником базовых цветов и responsive breakpoints служит этот документ, а их кодовой реализацией — `apps/customer_app/lib/core/theme/`.
+
 ## Визуальная база
 
 Источник направления: текущий landing-концепт `Criminal Brushes`.

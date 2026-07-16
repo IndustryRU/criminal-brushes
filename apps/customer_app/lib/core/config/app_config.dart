@@ -1,0 +1,11 @@
+abstract final class AppConfig {
+  static const environment = String.fromEnvironment(
+    'APP_ENV',
+    defaultValue: 'dev',
+  );
+  static const supabaseUrl = String.fromEnvironment('SUPABASE_URL');
+  static const supabaseAnonKey = String.fromEnvironment('SUPABASE_ANON_KEY');
+
+  static bool get hasSupabaseCredentials =>
+      supabaseUrl.isNotEmpty && supabaseAnonKey.isNotEmpty;
+}

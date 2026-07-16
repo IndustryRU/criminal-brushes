@@ -4,27 +4,40 @@
 
 Оценка: 3-5 дней.
 
+Статус на 2026-07-14: техническая часть завершена, внешний Figma/UI kit ожидает ссылку и подтверждение команды.
+
 Цель: подготовить основу для командной разработки.
 
 Задачи:
 
-- Создать Git repository.
-- Настроить `Docs`.
-- Создать Flutter app.
-- Подключить FVM.
-- Настроить базовый lint/analyze.
-- Создать Supabase dev project.
-- Настроить Supabase CLI.
-- Создать `.env.example`.
-- Добавить CI.
-- Зафиксировать Git flow.
-- Подготовить Figma/UI kit draft.
+- [x] Создать Git repository.
+- [x] Настроить `Docs`.
+- [x] Создать Flutter app.
+- [x] Подключить FVM.
+- [x] Настроить базовый lint/analyze.
+- [x] Создать Supabase dev project.
+- [x] Настроить Supabase CLI.
+- [x] Создать `.env.example`.
+- [x] Добавить CI.
+- [x] Зафиксировать Git flow.
+- [ ] Подготовить Figma/UI kit draft и добавить ссылку в `05-design-system.md`.
 
 Результат:
 
 - Команда может работать через PR.
 - Приложение запускается локально.
 - Есть базовая документация.
+
+Технический gate фазы 0:
+
+```bash
+cd apps/customer_app
+fvm flutter pub get
+dart format --output=none --set-exit-if-changed .
+fvm flutter analyze
+fvm flutter test
+fvm flutter build web --release
+```
 
 ## Phase 1: Visual MVP
 
