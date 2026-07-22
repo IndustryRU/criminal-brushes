@@ -413,6 +413,25 @@ git branch -d feature/task-name
 - Не использовать force push в общих ветках.
 - Если Git просит решить конфликт, сначала остановиться и разобраться.
 
+## 13.1 Codex note: unstable network and Flutter checks
+
+Иногда локальная сеть нестабильно обращается к `pub.dev`. Из-за этого `fvm flutter analyze`, `fvm flutter test` или обычный `flutter test` могут зависать или падать на обновлении package metadata, даже если код исправен.
+
+Рабочее правило:
+
+- сначала один раз выполнить dependency resolution, когда сеть доступна;
+- после этого для повторных проверок использовать `--no-pub`;
+- если Flutter CLI зависает, проверить и остановить старые Dart/Flutter процессы, затем повторить проверку.
+
+Команды для повторной проверки без сети:
+
+```powershell
+cd apps/customer_app
+fvm flutter analyze --no-pub
+fvm flutter test --no-pub --reporter expanded
+```
+
+Не считать сетевой сбой `pub.dev` ошибкой реализации, если `--no-pub` проверки проходят на уже установленных зависимостях.
 ## 14. Как мы работаем с помощью Codex
 
 Хороший формат задачи для Codex:

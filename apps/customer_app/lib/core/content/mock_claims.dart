@@ -1,4 +1,4 @@
-﻿abstract final class MockClaims {
+abstract final class MockClaims {
   static const heroEyebrow = 'Tiny Trouble Drop';
   static const heroTitle = 'Brush like a rebel';
   static const heroBody =

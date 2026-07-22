@@ -1,4 +1,4 @@
-﻿class Product {
+class Product {
   const Product({
     required this.id,
     required this.slug,

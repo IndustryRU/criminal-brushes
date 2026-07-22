@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 abstract final class AppColors {
   static const black = Color(0xFF050505);

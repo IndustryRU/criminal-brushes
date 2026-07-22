@@ -1,4 +1,4 @@
-﻿import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 
 String formatMinorMoney(int minorUnits, String currency) {
   final amount = minorUnits / 100;

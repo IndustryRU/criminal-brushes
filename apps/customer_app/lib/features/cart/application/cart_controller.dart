@@ -1,22 +1,21 @@
-﻿import 'package:criminal_brushes/features/cart/domain/cart_item.dart';
+import 'package:criminal_brushes/features/cart/domain/cart_item.dart';
 import 'package:criminal_brushes/features/catalog/domain/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final cartControllerProvider =
-    NotifierProvider<CartController, List<CartItem>>(CartController.new);
+final cartControllerProvider = NotifierProvider<CartController, List<CartItem>>(
+  CartController.new,
+);
 
 final cartItemCountProvider = Provider<int>((ref) {
-  return ref.watch(cartControllerProvider).fold<int>(
-        0,
-        (total, item) => total + item.quantity,
-      );
+  return ref
+      .watch(cartControllerProvider)
+      .fold<int>(0, (total, item) => total + item.quantity);
 });
 
 final cartTotalsProvider = Provider<CartTotals>((ref) {
-  final subtotal = ref.watch(cartControllerProvider).fold<int>(
-        0,
-        (total, item) => total + item.lineTotalMinor,
-      );
+  final subtotal = ref
+      .watch(cartControllerProvider)
+      .fold<int>(0, (total, item) => total + item.lineTotalMinor);
   return CartTotals(
     subtotalMinor: subtotal,
     deliveryMinor: subtotal == 0 ? 0 : 39000,
@@ -49,10 +48,15 @@ class CartController extends Notifier<List<CartItem>> {
     }
 
     final existing = state[existingIndex];
-    final nextQuantity = (existing.quantity + 1).clamp(1, variant.stockQuantity).toInt();
+    final nextQuantity = (existing.quantity + 1)
+        .clamp(1, variant.stockQuantity)
+        .toInt();
     state = [
       for (var i = 0; i < state.length; i++)
-        if (i == existingIndex) existing.copyWith(quantity: nextQuantity) else state[i],
+        if (i == existingIndex)
+          existing.copyWith(quantity: nextQuantity)
+        else
+          state[i],
     ];
   }
 
@@ -60,7 +64,9 @@ class CartController extends Notifier<List<CartItem>> {
     state = [
       for (final item in state)
         if (item.id == itemId)
-          item.copyWith(quantity: quantity.clamp(1, item.variant.stockQuantity).toInt())
+          item.copyWith(
+            quantity: quantity.clamp(1, item.variant.stockQuantity).toInt(),
+          )
         else
           item,
     ];
@@ -74,4 +80,3 @@ class CartController extends Notifier<List<CartItem>> {
     state = const [];
   }
 }
-

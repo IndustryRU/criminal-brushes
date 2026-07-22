@@ -1,4 +1,4 @@
-﻿import 'package:criminal_brushes/core/content/mock_claims.dart';
+import 'package:criminal_brushes/core/content/mock_claims.dart';
 import 'package:criminal_brushes/core/formatters/money_formatter.dart';
 import 'package:criminal_brushes/core/theme/app_breakpoints.dart';
 import 'package:criminal_brushes/core/theme/app_colors.dart';
@@ -29,7 +29,9 @@ class HomeScreen extends ConsumerWidget {
             ),
             child: Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: AppBreakpoints.wide),
+                constraints: const BoxConstraints(
+                  maxWidth: AppBreakpoints.wide,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -45,7 +47,9 @@ class HomeScreen extends ConsumerWidget {
                                   Expanded(child: _HeroCopy(product: product)),
                                   const SizedBox(width: AppSpacing.xxl),
                                   Expanded(
-                                    child: _ProductPlaceholder(product: product),
+                                    child: _ProductPlaceholder(
+                                      product: product,
+                                    ),
                                   ),
                                 ],
                               )

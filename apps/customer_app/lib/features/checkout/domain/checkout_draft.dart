@@ -1,4 +1,4 @@
-﻿class CheckoutDraft {
+class CheckoutDraft {
   const CheckoutDraft({
     this.customerName = '',
     this.email = '',

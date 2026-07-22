@@ -748,6 +748,21 @@ fvm flutter build web --release
 
 Gate: UI kit доступен на mobile/desktop, модели покрыты базовыми tests.
 
+Implementation note 2026-07-22:
+
+- Foundation gate implemented in `feature/phase1-foundation-student`.
+- `/ui-kit` covers palette, typography, spacing, buttons, badges, product card, price block, rating, color swatches, quantity stepper, cart row, selectors, checkout stepper, loading/empty/error/success, snackbar and modal trigger.
+- Router guards are covered for unknown product slug, empty checkout and missing mock confirmation.
+- Verification commands used for this gate:
+
+```powershell
+cd apps/customer_app
+fvm flutter analyze --no-pub
+fvm flutter test --no-pub --reporter expanded
+```
+
+`--no-pub` is intentional after dependencies are already resolved: the local network can be unstable when Flutter tries to refresh package metadata from `pub.dev`.
+
 ### Milestone 2 — Browse
 
 - Home.

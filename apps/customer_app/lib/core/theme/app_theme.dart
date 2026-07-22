@@ -1,4 +1,4 @@
-﻿import 'package:criminal_brushes/core/theme/app_colors.dart';
+import 'package:criminal_brushes/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 abstract final class AppTheme {

@@ -1,4 +1,4 @@
-﻿import 'package:criminal_brushes/features/cart/domain/cart_item.dart';
+import 'package:criminal_brushes/features/cart/domain/cart_item.dart';
 
 class MockOrderConfirmation {
   const MockOrderConfirmation({

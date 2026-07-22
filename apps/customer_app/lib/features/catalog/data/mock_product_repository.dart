@@ -1,4 +1,4 @@
-﻿import 'package:criminal_brushes/core/content/mock_claims.dart';
+import 'package:criminal_brushes/core/content/mock_claims.dart';
 import 'package:criminal_brushes/features/catalog/data/product_repository.dart';
 import 'package:criminal_brushes/features/catalog/domain/product.dart';
 

@@ -1,4 +1,4 @@
-﻿class DeliveryMethod {
+class DeliveryMethod {
   const DeliveryMethod({
     required this.id,
     required this.name,
@@ -28,7 +28,8 @@
       name: name ?? this.name,
       description: description ?? this.description,
       priceMinor: priceMinor ?? this.priceMinor,
-      estimatedDeliveryText: estimatedDeliveryText ?? this.estimatedDeliveryText,
+      estimatedDeliveryText:
+          estimatedDeliveryText ?? this.estimatedDeliveryText,
       isActive: isActive ?? this.isActive,
     );
   }

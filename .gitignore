@@ -14,6 +14,10 @@ build/
 *.ipa
 *.app
 
+# Flutter generated desktop artifacts
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/macos/Flutter/ephemeral/
+
 # IDE
 .idea/
 .vscode/
